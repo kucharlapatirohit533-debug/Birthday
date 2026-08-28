@@ -1,0 +1,812 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #120b12;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 180, 210, .15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(220, 150, 190, .12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #160c14,
+            #29131f,
+            #10080e
+        );
+}
+
+
+/* =========================
+   TOP HEADER
+========================= */
+
+.topbar {
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    position: relative;
+    z-index: 20;
+}
+
+.logo {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #f2d8a7;
+}
+
+.counter {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #dcbfcb;
+}
+
+
+/* =========================
+   ALBUM AREA
+========================= */
+
+.album-area {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 25px 20px 50px;
+}
+
+.book {
+    width: min(900px, 94vw);
+    min-height: 620px;
+
+    position: relative;
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.cover {
+    position: relative;
+
+    width: 100%;
+    min-height: 620px;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, .6);
+
+    transition:
+        transform .8s ease,
+        opacity .8s ease;
+}
+
+.cover.hide {
+    opacity: 0;
+    pointer-events: none;
+
+    transform:
+        translateX(-80px)
+        rotateY(30deg);
+}
+
+
+/* COVER IMAGE */
+
+.cover img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* COVER DARK OVERLAY */
+
+.cover-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, .65) 0%,
+            rgba(0, 0, 0, .25) 55%,
+            rgba(0, 0, 0, .12) 100%
+        );
+
+    z-index: 2;
+}
+
+
+/* =========================
+   COVER TEXT
+   MOVED AWAY FROM FACES
+========================= */
+
+.cover-content {
+    position: absolute !important;
+
+    top: 8% !important;
+    left: 4% !important;
+
+    width: 38% !important;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    text-align: left;
+
+    padding: 15px;
+
+    z-index: 5;
+}
+
+.cover-content span {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #f0d5a2;
+}
+
+.cover-content h1 {
+    font-size: clamp(48px, 6vw, 75px);
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 12px;
+    line-height: 1;
+    color: #fff;
+}
+
+.cover-content h2 {
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    color: #fff;
+}
+
+.gold-line {
+    width: 70px;
+    height: 1px;
+    background: #e4c18a;
+    margin: 15px 0;
+}
+
+.cover-content p {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #e8ced9;
+}
+
+.cover-content small {
+    margin-top: 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #fff;
+    opacity: .8;
+}
+
+/* SMALL TITLE */
+
+.cover-content span {
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #f0d5a2;
+}
+
+
+/* FOREVER */
+
+.cover-content h1 {
+    font-size: clamp(48px, 7vw, 82px);
+
+    font-weight: 400;
+    font-style: italic;
+
+    margin-top: 12px;
+
+    line-height: .95;
+
+    color: #fff;
+}
+
+
+/* BEGINS WITH US */
+
+.cover-content h2 {
+    font-size: clamp(18px, 3vw, 30px);
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    margin-top: 10px;
+
+    color: #fff;
+}
+
+
+/* GOLD LINE */
+
+.gold-line {
+    width: 80px;
+    height: 1px;
+
+    background: #e4c18a;
+
+    margin: 18px 0;
+}
+
+
+/* BOTTOM TITLE */
+
+.cover-content p {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #e8ced9;
+}
+
+
+/* TAP TO OPEN */
+
+.cover-content small {
+    margin-top: 35px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #fff;
+
+    opacity: .75;
+}
+
+
+/* =========================
+   MEMORY PAGES
+========================= */
+
+.memory-page {
+    position: absolute;
+
+    inset: 0;
+
+    min-height: 620px;
+
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns: 55% 45%;
+
+    gap: 30px;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf7,
+            #f5e9e9
+        );
+
+    color: #3b2630;
+
+    border-radius: 8px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateX(70px)
+        rotateY(-12deg)
+        scale(.98);
+
+    transition:
+        opacity .65s ease,
+        transform .65s ease,
+        visibility .65s ease;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, .5);
+}
+
+
+/* ACTIVE PAGE */
+
+.memory-page.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(0)
+        rotateY(0)
+        scale(1);
+
+    z-index: 5;
+}
+
+
+/* =========================
+   MEMORY IMAGE
+========================= */
+
+.memory-image {
+    width: 100%;
+    height: 540px;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    background: #eee;
+
+    box-shadow:
+        0 12px 30px rgba(60, 30, 40, .2);
+}
+
+.memory-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* =========================
+   MEMORY TEXT
+========================= */
+
+.memory-content {
+    padding: 20px 25px;
+
+    background: transparent;
+}
+
+.memory-content span {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #9c6c7d;
+}
+
+.memory-content h2 {
+    margin-top: 18px;
+
+    font-size: clamp(28px, 4vw, 48px);
+
+    line-height: 1.1;
+
+    font-weight: 400;
+}
+
+.line {
+    width: 70px;
+    height: 1px;
+
+    background: #b98b9b;
+
+    margin: 22px 0;
+}
+
+.memory-content p {
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: #674c57;
+}
+
+.memory-content b {
+    display: block;
+
+    margin-top: 25px;
+
+    font-size: 22px;
+
+    color: #a35f78;
+}
+
+.memory-content strong {
+    display: block;
+
+    margin-top: 30px;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    color: #704657;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    padding: 15px 20px 40px;
+}
+
+.controls button {
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(240, 210, 220, .4);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .06);
+
+    color: #fff;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.controls button:hover {
+    background: rgba(255, 255, 255, .15);
+
+    transform: scale(1.08);
+}
+
+.controls button:disabled {
+    opacity: .3;
+
+    cursor: default;
+}
+
+.controls span {
+    min-width: 190px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #c9adb9;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        height: 55px;
+
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .counter {
+        font-size: 10px;
+    }
+
+
+    /* ALBUM */
+
+    .album-area {
+        padding: 10px 12px 30px;
+    }
+
+    .book {
+        width: 100%;
+
+        min-height: 700px;
+    }
+
+
+    /* COVER */
+
+    .cover {
+        min-height: 700px;
+    }
+
+    .cover img {
+        object-fit: cover;
+
+        object-position: center;
+    }
+
+
+    /* MOBILE COVER TEXT
+       KEEP IT AWAY FROM FACES */
+
+    .cover-content {
+        left: 6%;
+        top: 10%;
+
+        width: 88%;
+
+        align-items: center;
+
+        text-align: center;
+
+        padding: 15px;
+    }
+
+    .cover-content span {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+    .cover-content h1 {
+        font-size: 58px;
+
+        margin-top: 10px;
+    }
+
+    .cover-content h2 {
+        font-size: 21px;
+
+        letter-spacing: 1px;
+    }
+
+    .gold-line {
+        width: 65px;
+
+        margin: 14px 0;
+    }
+
+    .cover-content p {
+        font-size: 8px;
+
+        letter-spacing: 3px;
+    }
+
+    .cover-content small {
+        margin-top: 25px;
+
+        font-size: 9px;
+    }
+
+
+    /* MEMORY PAGE */
+
+    .memory-page {
+        min-height: 700px;
+
+        position: absolute;
+
+        padding: 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: flex-start;
+
+        gap: 20px;
+    }
+
+
+    /* MEMORY IMAGE */
+
+    .memory-image {
+        width: 100%;
+
+        height: 420px;
+
+        flex-shrink: 0;
+    }
+
+
+    .memory-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+    }
+
+
+    /* MEMORY TEXT */
+
+    .memory-content {
+        padding: 0 8px 30px;
+    }
+
+    .memory-content h2 {
+        font-size: 30px;
+    }
+
+    .memory-content p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* CONTROLS */
+
+    .controls {
+        gap: 18px;
+
+        padding-bottom: 30px;
+    }
+
+    .controls span {
+        min-width: 150px;
+
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .book {
+        min-height: 650px;
+    }
+
+    .cover {
+        min-height: 650px;
+    }
+
+    .memory-page {
+        min-height: 650px;
+    }
+
+    .memory-image {
+        height: 350px;
+    }
+
+    .memory-content h2 {
+        font-size: 27px;
+    }
+
+
+    /* SMALL PHONE COVER */
+
+    .cover-content {
+        top: 9%;
+
+        left: 4%;
+
+        width: 92%;
+    }
+
+    .cover-content h1 {
+        font-size: 50px;
+    }
+
+    .cover-content h2 {
+        font-size: 19px;
+    }
+
+}
+@media (max-width: 700px) {
+
+    .cover-content {
+        top: 5% !important;
+        left: 5% !important;
+
+        width: 90% !important;
+
+        align-items: flex-start;
+        text-align: left;
+
+        padding: 10px;
+    }
+
+    .cover-content span {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .cover-content h1 {
+        font-size: 48px;
+        margin-top: 8px;
+    }
+
+    .cover-content h2 {
+        font-size: 18px;
+    }
+
+    .gold-line {
+        margin: 10px 0;
+    }
+
+    .cover-content p {
+        font-size: 8px;
+    }
+
+    .cover-content small {
+        margin-top: 15px;
+    }
+}
