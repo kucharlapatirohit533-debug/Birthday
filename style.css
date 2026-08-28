@@ -1,27 +1,34 @@
+/* =========================================================
+   OUR STORY
+   COMPLETE RESPONSIVE CSS
+   ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,
-body {
+html {
     width: 100%;
     min-height: 100%;
 }
 
 body {
+    width: 100%;
     min-height: 100vh;
-    font-family: Georgia, "Times New Roman", serif;
-    background: #120b12;
-    color: #fff;
     overflow-x: hidden;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background: #120b12;
+    color: white;
 }
 
 
-/* =========================
+/* =========================================================
    BACKGROUND
-========================= */
+   ========================================================= */
 
 .background {
     position: fixed;
@@ -31,12 +38,12 @@ body {
     background:
         radial-gradient(
             circle at 20% 20%,
-            rgba(255, 180, 210, .15),
+            rgba(255, 180, 210, 0.15),
             transparent 30%
         ),
         radial-gradient(
             circle at 80% 80%,
-            rgba(220, 150, 190, .12),
+            rgba(220, 150, 190, 0.12),
             transparent 30%
         ),
         linear-gradient(
@@ -48,9 +55,9 @@ body {
 }
 
 
-/* =========================
-   TOP HEADER
-========================= */
+/* =========================================================
+   TOP BAR
+   ========================================================= */
 
 .topbar {
     width: 100%;
@@ -79,9 +86,9 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    ALBUM AREA
-========================= */
+   ========================================================= */
 
 .album-area {
     width: 100%;
@@ -89,7 +96,7 @@ body {
     display: flex;
     justify-content: center;
 
-    padding: 25px 20px 50px;
+    padding: 25px 20px 40px;
 }
 
 .book {
@@ -100,9 +107,9 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    COVER
-========================= */
+   ========================================================= */
 
 .cover {
     position: relative;
@@ -111,16 +118,17 @@ body {
     min-height: 620px;
 
     border-radius: 8px;
+
     overflow: hidden;
 
     cursor: pointer;
 
     box-shadow:
-        0 25px 70px rgba(0, 0, 0, .6);
+        0 25px 70px rgba(0, 0, 0, 0.6);
 
     transition:
-        transform .8s ease,
-        opacity .8s ease;
+        transform 0.8s ease,
+        opacity 0.8s ease;
 }
 
 .cover.hide {
@@ -133,9 +141,11 @@ body {
 }
 
 
-/* COVER IMAGE */
+/* =========================================================
+   COVER IMAGE
+   ========================================================= */
 
-.cover img {
+.cover > img {
     position: absolute;
 
     inset: 0;
@@ -143,12 +153,16 @@ body {
     width: 100%;
     height: 100%;
 
+    display: block;
+
     object-fit: cover;
     object-position: center;
 }
 
 
-/* COVER DARK OVERLAY */
+/* =========================================================
+   COVER OVERLAY
+   ========================================================= */
 
 .cover-overlay {
     position: absolute;
@@ -158,27 +172,26 @@ body {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, .65) 0%,
-            rgba(0, 0, 0, .25) 55%,
-            rgba(0, 0, 0, .12) 100%
+            rgba(0, 0, 0, 0.62),
+            rgba(0, 0, 0, 0.20),
+            rgba(0, 0, 0, 0.08)
         );
 
     z-index: 2;
 }
 
 
-/* =========================
+/* =========================================================
    COVER TEXT
-   MOVED AWAY FROM FACES
-========================= */
+   ========================================================= */
 
 .cover-content {
-    position: absolute !important;
+    position: absolute;
 
-    top: 8% !important;
-    left: 4% !important;
+    top: 8%;
+    left: 4%;
 
-    width: 38% !important;
+    width: 38%;
 
     display: flex;
     flex-direction: column;
@@ -193,131 +206,71 @@ body {
 
 .cover-content span {
     font-size: 10px;
+
     letter-spacing: 4px;
+
     color: #f0d5a2;
 }
 
 .cover-content h1 {
     font-size: clamp(48px, 6vw, 75px);
+
     font-weight: 400;
+
     font-style: italic;
+
     margin-top: 12px;
+
     line-height: 1;
-    color: #fff;
+
+    color: white;
 }
 
 .cover-content h2 {
     font-size: clamp(18px, 2.5vw, 28px);
+
     font-weight: 400;
+
     letter-spacing: 2px;
+
     margin-top: 8px;
-    color: #fff;
+
+    color: white;
 }
 
 .gold-line {
     width: 70px;
     height: 1px;
+
     background: #e4c18a;
+
     margin: 15px 0;
 }
 
 .cover-content p {
     font-size: 9px;
+
     letter-spacing: 3px;
+
     color: #e8ced9;
 }
 
 .cover-content small {
     margin-top: 20px;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #fff;
-    opacity: .8;
-}
 
-/* SMALL TITLE */
-
-.cover-content span {
-    font-size: 11px;
-
-    letter-spacing: 5px;
-
-    color: #f0d5a2;
-}
-
-
-/* FOREVER */
-
-.cover-content h1 {
-    font-size: clamp(48px, 7vw, 82px);
-
-    font-weight: 400;
-    font-style: italic;
-
-    margin-top: 12px;
-
-    line-height: .95;
-
-    color: #fff;
-}
-
-
-/* BEGINS WITH US */
-
-.cover-content h2 {
-    font-size: clamp(18px, 3vw, 30px);
-
-    font-weight: 400;
-
-    letter-spacing: 2px;
-
-    margin-top: 10px;
-
-    color: #fff;
-}
-
-
-/* GOLD LINE */
-
-.gold-line {
-    width: 80px;
-    height: 1px;
-
-    background: #e4c18a;
-
-    margin: 18px 0;
-}
-
-
-/* BOTTOM TITLE */
-
-.cover-content p {
     font-size: 10px;
 
-    letter-spacing: 4px;
-
-    color: #e8ced9;
-}
-
-
-/* TAP TO OPEN */
-
-.cover-content small {
-    margin-top: 35px;
-
-    font-size: 11px;
-
     letter-spacing: 2px;
 
-    color: #fff;
+    color: white;
 
-    opacity: .75;
+    opacity: 0.8;
 }
 
 
-/* =========================
+/* =========================================================
    MEMORY PAGES
-========================= */
+   ========================================================= */
 
 .memory-page {
     position: absolute;
@@ -326,13 +279,13 @@ body {
 
     min-height: 620px;
 
-    padding: 35px;
+    padding: 30px;
 
     display: grid;
 
     grid-template-columns: 55% 45%;
 
-    gap: 30px;
+    gap: 20px;
 
     align-items: center;
 
@@ -354,19 +307,16 @@ body {
     transform:
         translateX(70px)
         rotateY(-12deg)
-        scale(.98);
+        scale(0.98);
 
     transition:
-        opacity .65s ease,
-        transform .65s ease,
-        visibility .65s ease;
+        opacity 0.65s ease,
+        transform 0.65s ease,
+        visibility 0.65s ease;
 
     box-shadow:
-        0 25px 70px rgba(0, 0, 0, .5);
+        0 25px 70px rgba(0, 0, 0, 0.5);
 }
-
-
-/* ACTIVE PAGE */
 
 .memory-page.active {
     opacity: 1;
@@ -382,39 +332,55 @@ body {
 }
 
 
-/* =========================
-   MEMORY IMAGE
-========================= */
+/* =========================================================
+   AUTOMATIC IMAGE FITTING
+   ========================================================= */
 
 .memory-image {
     width: 100%;
     height: 540px;
 
-    border-radius: 6px;
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 
     overflow: hidden;
 
-    background: #eee;
+    background: #f1e8e8;
 
-    box-shadow:
-        0 12px 30px rgba(60, 30, 40, .2);
+    border-radius: 8px;
 }
+
+
+/*
+   IMPORTANT:
+
+   contain = shows the COMPLETE photo.
+   No head, face, body or important part gets cropped.
+*/
 
 .memory-image img {
     width: 100%;
     height: 100%;
 
+    max-width: 100%;
+    max-height: 100%;
+
     display: block;
 
-    object-fit: cover;
-
+    object-fit: contain;
     object-position: center;
+
+    border-radius: 5px;
 }
 
 
-/* =========================
-   MEMORY TEXT
-========================= */
+/* =========================================================
+   MEMORY CONTENT
+   ========================================================= */
 
 .memory-content {
     padding: 20px 25px;
@@ -484,9 +450,9 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    CONTROLS
-========================= */
+   ========================================================= */
 
 .controls {
     width: 100%;
@@ -494,7 +460,6 @@ body {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 35px;
@@ -506,31 +471,33 @@ body {
     width: 48px;
     height: 48px;
 
-    border: 1px solid rgba(240, 210, 220, .4);
+    border: 1px solid rgba(240, 210, 220, 0.4);
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, .06);
+    background: rgba(255, 255, 255, 0.06);
 
-    color: #fff;
+    color: white;
 
     font-size: 30px;
 
     cursor: pointer;
 
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .controls button:hover {
-    background: rgba(255, 255, 255, .15);
+    background: rgba(255, 255, 255, 0.15);
 
     transform: scale(1.08);
 }
 
 .controls button:disabled {
-    opacity: .3;
+    opacity: 0.3;
 
     cursor: default;
+
+    transform: none;
 }
 
 .controls span {
@@ -549,10 +516,54 @@ body {
 
 
 /* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .book {
+        width: 95vw;
+
+        min-height: 650px;
+    }
+
+    .cover {
+        min-height: 650px;
+    }
+
+    .memory-page {
+        min-height: 650px;
+
+        grid-template-columns: 52% 48%;
+
+        padding: 20px;
+    }
+
+    .memory-image {
+        height: 570px;
+    }
+
+    .memory-content {
+        padding: 15px;
+    }
+
+}
+
+
+/* =========================================================
    MOBILE
-========================================================= */
+   ========================================================= */
 
 @media (max-width: 700px) {
+
+    body {
+        min-height: 100vh;
+
+        overflow-x: hidden;
+    }
+
+
+    /* TOP BAR */
 
     .topbar {
         height: 55px;
@@ -590,43 +601,43 @@ body {
         min-height: 700px;
     }
 
-    .cover img {
+    .cover > img {
         object-fit: cover;
 
         object-position: center;
     }
 
 
-    /* MOBILE COVER TEXT
-       KEEP IT AWAY FROM FACES */
+    /* COVER TEXT */
 
     .cover-content {
-        left: 6%;
-        top: 10%;
+        top: 5%;
 
-        width: 88%;
+        left: 5%;
 
-        align-items: center;
+        width: 90%;
 
-        text-align: center;
+        align-items: flex-start;
 
-        padding: 15px;
+        text-align: left;
+
+        padding: 10px;
     }
 
     .cover-content span {
-        font-size: 9px;
+        font-size: 8px;
 
         letter-spacing: 3px;
     }
 
     .cover-content h1 {
-        font-size: 58px;
+        font-size: 48px;
 
-        margin-top: 10px;
+        margin-top: 8px;
     }
 
     .cover-content h2 {
-        font-size: 21px;
+        font-size: 18px;
 
         letter-spacing: 1px;
     }
@@ -634,7 +645,7 @@ body {
     .gold-line {
         width: 65px;
 
-        margin: 14px 0;
+        margin: 10px 0;
     }
 
     .cover-content p {
@@ -644,7 +655,7 @@ body {
     }
 
     .cover-content small {
-        margin-top: 25px;
+        margin-top: 15px;
 
         font-size: 9px;
     }
@@ -655,9 +666,7 @@ body {
     .memory-page {
         min-height: 700px;
 
-        position: absolute;
-
-        padding: 20px;
+        padding: 15px;
 
         display: flex;
 
@@ -665,26 +674,40 @@ body {
 
         justify-content: flex-start;
 
-        gap: 20px;
+        align-items: stretch;
+
+        gap: 12px;
     }
 
 
-    /* MEMORY IMAGE */
+    /* AUTOMATIC MOBILE IMAGE */
 
     .memory-image {
         width: 100%;
 
         height: 420px;
 
-        flex-shrink: 0;
-    }
+        padding: 10px;
 
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        overflow: hidden;
+    }
 
     .memory-image img {
         width: 100%;
         height: 100%;
 
-        object-fit: cover;
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: contain;
 
         object-position: center;
     }
@@ -693,7 +716,7 @@ body {
     /* MEMORY TEXT */
 
     .memory-content {
-        padding: 0 8px 30px;
+        padding: 0 8px 25px;
     }
 
     .memory-content h2 {
@@ -706,13 +729,30 @@ body {
         line-height: 1.7;
     }
 
+    .memory-content b {
+        margin-top: 15px;
+    }
+
+    .memory-content strong {
+        margin-top: 20px;
+
+        font-size: 16px;
+    }
+
 
     /* CONTROLS */
 
     .controls {
         gap: 18px;
 
-        padding-bottom: 30px;
+        padding: 15px 15px 30px;
+    }
+
+    .controls button {
+        width: 44px;
+        height: 44px;
+
+        font-size: 27px;
     }
 
     .controls span {
@@ -725,8 +765,8 @@ body {
 
 
 /* =========================================================
-   SMALL PHONES
-========================================================= */
+   SMALL MOBILE
+   ========================================================= */
 
 @media (max-width: 420px) {
 
@@ -742,23 +782,38 @@ body {
         min-height: 650px;
     }
 
+
+    /* IMAGE AUTOMATICALLY ADJUSTS */
+
     .memory-image {
-        height: 350px;
+        height: 360px;
+
+        padding: 8px;
     }
+
+    .memory-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+    }
+
+
+    /* TEXT */
 
     .memory-content h2 {
         font-size: 27px;
     }
 
 
-    /* SMALL PHONE COVER */
+    /* COVER */
 
     .cover-content {
-        top: 9%;
+        top: 4%;
 
-        left: 4%;
+        left: 5%;
 
-        width: 92%;
+        width: 90%;
     }
 
     .cover-content h1 {
@@ -770,43 +825,40 @@ body {
     }
 
 }
-@media (max-width: 700px) {
 
-    .cover-content {
-        top: 5% !important;
-        left: 5% !important;
 
-        width: 90% !important;
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
 
-        align-items: flex-start;
-        text-align: left;
+@media (max-width: 350px) {
 
-        padding: 10px;
+    .book {
+        min-height: 620px;
     }
 
-    .cover-content span {
-        font-size: 8px;
-        letter-spacing: 3px;
+    .cover {
+        min-height: 620px;
     }
 
-    .cover-content h1 {
-        font-size: 48px;
-        margin-top: 8px;
+    .memory-page {
+        min-height: 620px;
     }
 
-    .cover-content h2 {
-        font-size: 18px;
+    .memory-image {
+        height: 330px;
     }
 
-    .gold-line {
-        margin: 10px 0;
+    .memory-content h2 {
+        font-size: 24px;
     }
 
-    .cover-content p {
-        font-size: 8px;
+    .controls {
+        gap: 10px;
     }
 
-    .cover-content small {
-        margin-top: 15px;
+    .controls span {
+        min-width: 120px;
     }
+
 }
